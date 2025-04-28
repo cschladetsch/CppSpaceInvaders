@@ -1,5 +1,4 @@
 #!/bin/bash
-# Build and run Space Invaders
 
 # Go to build directory and run cmake
 cd build && cmake .. && make
@@ -24,3 +23,4 @@ if [ $? -eq 0 ]; then
 else
     echo "Build failed!"
 fi
+

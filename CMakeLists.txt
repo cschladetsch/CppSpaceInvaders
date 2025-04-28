@@ -25,12 +25,12 @@ message(STATUS "  SDL3_INCLUDE_DIRS: ${SDL3_INCLUDE_DIRS}")
 message(STATUS "  SDL3_LIBRARIES: ${SDL3_LIBRARIES}")
 message(STATUS "  SDL3_VERSION: ${SDL3_VERSION}")
 
-# Define source files
+# Define source files using globbing (more flexible for current project state)
 file(GLOB_RECURSE SOURCES 
     "src/*.cpp"
 )
 
-# Define header files
+# Define header files using globbing
 file(GLOB_RECURSE HEADERS
     "include/*.h"
 )
@@ -38,7 +38,7 @@ file(GLOB_RECURSE HEADERS
 # Create executable
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
-# Include directories
+# Include directories - fix the path to properly include all header files
 target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
     ${SDL3_INCLUDE_DIRS}
@@ -63,9 +63,8 @@ set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT $
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 # Output executable to bin directory
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/bin/Debug)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/bin/Release)
+# Output executable to a single consistent location
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 # Copy assets directory to build output
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
