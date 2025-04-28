@@ -12,7 +12,7 @@ A modern C++23 implementation of the classic Space Invaders arcade game using SD
 - Scoring system with high score tracking
 - Increasing difficulty with level progression
 - Bullet limit (only 2 bullets on screen at once) for strategic gameplay
-- Proper font rendering for text (when SDL_ttf is available)
+- Proper font rendering for text (when SDL\_ttf is available)
 
 ## Controls
 
@@ -30,13 +30,13 @@ A modern C++23 implementation of the classic Space Invaders arcade game using SD
 
 ### Optional Dependencies
 
-- SDL3_ttf for better text rendering
+- SDL3\_ttf for better text rendering
 
 ### Build Instructions
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/CppSpaceInvaders.git
+   git clone https://github.com/cschladetsch/CppSpaceInvaders.git
    cd CppSpaceInvaders
    ```
 
