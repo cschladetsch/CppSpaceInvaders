@@ -1,134 +1,107 @@
-# Space Invaders Clone
+# C++ Space Invaders
 
-A modern C++23 implementation of the classic Space Invaders arcade game using SDL3.
+A modern C++ implementation of the classic arcade game Space Invaders using SDL3 (Simple DirectMedia Layer).
 
-<div align="center">
-  <img src="assets/images/screenshot.png" alt="Space Invaders Screenshot" width="600">
-  <p><i>Note: Screenshot will be updated once game is finalized.</i></p>
-</div>
+![Space Invaders Screenshot](assets/screenshot.png)
 
-## ?? Overview
+## Features
 
-This project reimagines the iconic 1978 arcade game Space Invaders with modern C++ and SDL3. It maintains the classic gameplay while adding modern features and clean, well-structured code that can serve as a learning resource for game development.
+- Classic Space Invaders gameplay with modern features
+- Built with SDL3 for cross-platform compatibility
+- Clean, modular C++23 code
+- Optimized rendering and collision detection
+- Support for keyboard controls
+- Sound effects and optional font rendering with SDL3_ttf
 
-## ? Features
+## Requirements
 
-- **Classic Gameplay**: Authentic Space Invaders experience with modern enhancements
-- **Defensive Barriers**: Take cover behind destructible barriers that degrade as they're hit
-- **Bonus UFOs**: Special UFO enemies periodically fly across the top of the screen for bonus points
-- **Progressive Difficulty**: Increasing challenge with each level
-- **Scoring System**: Score tracking with persistent high scores
-- **Authentic Limitations**: True to the original, only 2 player bullets allowed on screen simultaneously
-- **Modern Font Rendering**: Crisp text rendering when SDL_ttf is available
+- C++23 compatible compiler
+- CMake 3.20 or higher
+- SDL3 library
+- SDL3_ttf library (optional, for enhanced text rendering)
 
-## ??? Controls
+## Building from Source
 
-| Key | Action |
-|-----|--------|
-| Left Arrow / A | Move left |
-| Right Arrow / D | Move right |
-| Space | Fire bullet |
-| R | Restart game (after Game Over) |
-
-## ?? Building the Game
-
-### Prerequisites
-
-- **Compiler**: C++23 compatible compiler (GCC 11+, Clang 12+, MSVC 2022+)
-- **Build System**: CMake 3.20 or higher
-- **Libraries**: SDL3
-
-### Optional Dependencies
-
-- **SDL3_ttf**: For improved text rendering (see [FONT_SETUP.md](FONT_SETUP.md) for installation)
-
-### Build Instructions
+### Clone the Repository
 
 ```bash
-# Clone the repository
 git clone https://github.com/yourusername/CppSpaceInvaders.git
 cd CppSpaceInvaders
+```
 
-# Create build directory and build
-mkdir -p build && cd build
+### Building with CMake
+
+```bash
+# Create a build directory
+mkdir build
+cd build
+
+# Configure CMake
 cmake ..
-make
 
-# Run the game
+# Build the project
+cmake --build .
+```
+
+### Running the Game
+
+After building, the executable will be in the `bin` directory:
+
+```bash
+# From the build directory
 ./bin/CppSpaceInvaders
 ```
 
-### Quick Build (using provided script)
+## Controls
 
-```bash
-./r
-```
+- **Left/Right Arrow Keys**: Move the player ship
+- **Space**: Shoot
+- **ESC**: Pause/Exit game
 
-## ?? Project Structure
+## Project Structure
 
 ```
 CppSpaceInvaders/
-ÃÄÄ include/                # Header files
-³   ÃÄÄ Entity/             # Game entity headers
-³   ³   ÃÄÄ Barrier.h       # Defensive barriers
-³   ³   ÃÄÄ Bullet.h        # Projectiles
-³   ³   ÃÄÄ Enemy.h         # Alien invaders
-³   ³   ÃÄÄ Player.h        # Player ship
-³   ³   ÀÄÄ UFO.h           # Bonus UFO
-³   ÃÄÄ Game.h              # Game state management
-³   ÃÄÄ Graphics.h          # Rendering utilities
-³   ÃÄÄ TextRenderer.h      # Font and text rendering
-³   ÀÄÄ Transform.h         # Transformation utilities
-ÃÄÄ src/                    # Implementation files
-³   ÃÄÄ Entity/             # Entity implementations
-³   ÃÄÄ Game.cpp            # Game logic implementation
-³   ÃÄÄ Graphics.cpp        # Rendering implementation
-³   ÃÄÄ main.cpp            # Entry point
-³   ÃÄÄ TextRenderer.cpp    # Text rendering implementation
-³   ÀÄÄ Transform.cpp       # Transform implementation
-ÃÄÄ assets/                 # Game resources
-³   ÀÄÄ fonts/              # Font files for text rendering
-ÃÄÄ CMakeLists.txt          # Build configuration
-ÀÄÄ r                       # Build & run script
+ÃÄÄ assets/             # Game assets (sprites, sounds, fonts)
+ÃÄÄ include/            # Header files
+ÃÄÄ src/                # Source files
+ÃÄÄ CMakeLists.txt      # CMake build configuration
+ÃÄÄ .gitignore          # Git ignore file
+ÀÄÄ README.md           # This file
 ```
 
-## ?? Implementation Details
+## Game Components
 
-### Core Game Loop
+- **Player**: Controls the player ship at the bottom of the screen
+- **Enemy**: Various alien invaders that move in formation
+- **Bullet**: Projectiles fired by the player and enemies
+- **Barrier**: Destructible shields that protect the player
+- **UFO**: Special enemy that occasionally appears at the top of the screen
 
-The game follows a standard game loop pattern:
-1. **Input Processing**: Handle keyboard input for player movement and shooting
-2. **Update Game State**: Update positions of all entities, handle collisions
-3. **Render**: Draw the current game state to the screen
+## Dependencies
 
-### Key Technical Features
+- [SDL3](https://github.com/libsdl-org/SDL) - Simple DirectMedia Layer v3
+- [SDL3_ttf](https://github.com/libsdl-org/SDL_ttf) - SDL3 TrueType Font library (optional)
 
-- **Entity System**: Clean separation of game entities with consistent interfaces
-- **Collision Detection**: Efficient collision checking between entities
-- **Resource Management**: Smart pointers for automatic resource cleanup
-- **Rendering System**: Abstraction over SDL3 for simplified rendering
-- **Text System**: Flexible text rendering with fallback mechanism
+## Building SDL3 from Source
 
-## ?? Future Enhancements
+If SDL3 is not available in your package manager, you can build it from source:
 
-- [ ] Sound effects and music
-- [ ] Multiple enemy types
-- [ ] Power-ups system
-- [ ] Level editor
-- [ ] Multiplayer support
+```bash
+git clone https://github.com/libsdl-org/SDL.git -b SDL3
+cd SDL
+mkdir build
+cd build
+cmake ..
+cmake --build .
+sudo cmake --install .
+```
 
-## ?? License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## ?? Acknowledgments
+## Acknowledgments
 
-- Original Space Invaders game by Tomohiro Nishikado (1978)
-- SDL3 development team for their excellent cross-platform library
-- Open source community for inspiration and resources
-
----
-
-<div align="center">
-  <p>Made with ?? by [Your Name]</p>
-</div>
+- Original Space Invaders game created by Tomohiro Nishikado
+- SDL3 development team for their excellent multimedia library
