@@ -2,7 +2,7 @@
 
 A modern C++ implementation of the classic arcade game Space Invaders using SDL3 (Simple DirectMedia Layer).
 
-![Space Invaders Screenshot](resources/Demo,gif)
+![Space Invaders Screenshot](resources/Demo.gif)
 
 ## Features
 
