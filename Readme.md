@@ -2,7 +2,7 @@
 
 A modern C++ implementation of the classic arcade game Space Invaders using SDL3 (Simple DirectMedia Layer).
 
-![Space Invaders Screenshot](assets/screenshot.png)
+![Space Invaders Screenshot](resources/Demo,gif)
 
 ## Features
 
@@ -18,7 +18,7 @@ A modern C++ implementation of the classic arcade game Space Invaders using SDL3
 - C++23 compatible compiler
 - CMake 3.20 or higher
 - SDL3 library
-- SDL3_ttf library (optional, for enhanced text rendering)
+- SDL3\_ttf library (optional, for enhanced text rendering)
 
 ## Building from Source
 
@@ -62,12 +62,12 @@ After building, the executable will be in the `bin` directory:
 
 ```
 CppSpaceInvaders/
-ÃÄÄ assets/             # Game assets (sprites, sounds, fonts)
-ÃÄÄ include/            # Header files
-ÃÄÄ src/                # Source files
-ÃÄÄ CMakeLists.txt      # CMake build configuration
-ÃÄÄ .gitignore          # Git ignore file
-ÀÄÄ README.md           # This file
+   assets/             # Game assets (sprites, sounds, fonts)
+   include/            # Header files
+   src/                # Source files
+   CMakeLists.txt      # CMake build configuration
+   .gitignore          # Git ignore file
+   README.md           # This file
 ```
 
 ## Game Components
@@ -81,7 +81,7 @@ CppSpaceInvaders/
 ## Dependencies
 
 - [SDL3](https://github.com/libsdl-org/SDL) - Simple DirectMedia Layer v3
-- [SDL3_ttf](https://github.com/libsdl-org/SDL_ttf) - SDL3 TrueType Font library (optional)
+- [SDL3\_ttf](https://github.com/libsdl-org/SDL_ttf) - SDL3 TrueType Font library (optional)
 
 ## Building SDL3 from Source
 
