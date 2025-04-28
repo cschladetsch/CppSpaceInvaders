@@ -1,3 +1,33 @@
+#!/bin/bash
+# Script to reorganize the Space Invaders project file structure
+
+# Create main directories
+mkdir -p src/Entity
+mkdir -p assets/fonts
+mkdir -p build
+mkdir -p include
+
+# Move source files to proper locations
+# Entity files
+if [ -d "Entity" ]; then
+  mv Entity/*.cpp src/Entity/
+  mv Entity/*.h include/Entity/
+  rmdir Entity
+fi
+
+# Source files
+mv *.cpp src/ 2>/dev/null
+mv Transform.cpp src/ 2>/dev/null
+mv game/Graphics.cpp src/ 2>/dev/null
+rmdir game 2>/dev/null
+
+# Header files
+mv *.h include/ 2>/dev/null
+mv Transform.h include/ 2>/dev/null
+mv src/Graphics.h include/ 2>/dev/null
+
+# Update CMakeLists.txt to reflect new structure
+cat > CMakeLists.txt << 'EOF'
 cmake_minimum_required(VERSION 3.20)
 project(CppSpaceInvaders)
 
@@ -78,3 +108,23 @@ add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
 message(STATUS "CMake Generator: ${CMAKE_GENERATOR}")
 message(STATUS "C++ Standard: ${CMAKE_CXX_STANDARD}")
 message(STATUS "Build Type: ${CMAKE_BUILD_TYPE}")
+EOF
+
+# Update run script to reflect new structure
+cat > r << 'EOF'
+#!/bin/bash
+mkdir -p build && cd build && cmake .. && make && ./bin/CppSpaceInvaders $@
+cd ..
+EOF
+
+# Make the run script executable
+chmod +x r
+
+echo "File structure reorganized successfully!"
+echo "New structure:"
+echo "- src/: Source files"
+echo "- include/: Header files"
+echo "- assets/: Game resources"
+echo "- build/: Build files"
+
+echo "To build and run the game, use: ./r"
