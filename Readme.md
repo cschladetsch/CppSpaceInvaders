@@ -21,7 +21,7 @@ This project reimagines the iconic 1978 arcade game Space Invaders with modern C
 - **Authentic Limitations**: True to the original, only 2 player bullets allowed on screen simultaneously
 - **Modern Font Rendering**: Crisp text rendering when SDL_ttf is available
 
-## ?? Controls
+## ??? Controls
 
 | Key | Action |
 |-----|--------|
