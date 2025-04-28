@@ -1,5 +1,5 @@
-#include "Player.h"
-#include "Bullet.h"
+#include "../../Entity/Player.h"
+#include "../../Entity/Bullet.h"
 #include <algorithm>
 #include <iostream>
 #include <memory>
@@ -147,19 +147,22 @@ void Player::TakeDamage() {
 }
 
 void Player::Shoot() {
-    // Limit to only 2 bullets on screen at a time
-    if (bullets.size() >= 2) {
-        return;
+    // Only allow one bullet at a time (like the original game)
+    if (bullets.empty() && shootCooldown <= 0.0f) {
+        auto bullet = std::make_unique<Bullet>(graphics);
+        
+        // Position the bullet at the top center of the player
+        float bulletX = position.x + (width / 2.0f) - (bullet->GetBounds().w / 2.0f);
+        float bulletY = position.y - bullet->GetBounds().h;
+        bullet->SetPosition(bulletX, bulletY);
+        
+        // Bullet travels upward
+        bullet->SetVelocity(0.0f, -500.0f);
+        
+        bullets.push_back(std::move(bullet));
+        shootCooldown = 0.2f;
     }
-    
-    auto bullet = std::make_unique<Bullet>(graphics);
-    bullet->SetPosition(position.x, position.y - height * 0.5f);
-    bullet->SetVelocity(0.0f, -500.0f);  // Shoot upward
-    bullets.push_back(std::move(bullet));
-    
-    shootCooldown = 0.2f;  // Cooldown between shots
 }
-
 void Player::UpdateBullets(float deltaTime) {
     // Update all bullets
     for (auto& bullet : bullets) {

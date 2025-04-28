@@ -2,7 +2,7 @@
 #include <SDL3/SDL.h>
 #include <vector>
 #include <memory>
-#include "../src/Graphics.h"
+#include "../include/Graphics.h"
 
 class Bullet;
 

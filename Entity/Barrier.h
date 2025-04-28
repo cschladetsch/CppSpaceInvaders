@@ -1,7 +1,7 @@
 #pragma once
 #include <SDL3/SDL.h>
 #include <vector>
-#include "../src/Graphics.h"
+#include "../include/Graphics.h"
 
 // A barrier consists of multiple "bricks" that can be individually destroyed
 class Barrier {

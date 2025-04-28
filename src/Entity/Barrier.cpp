@@ -1,4 +1,4 @@
-#include "Barrier.h"
+#include "../../Entity/Barrier.h"
 
 Barrier::Barrier(Graphics* graphics, float x, float y) : graphics(graphics) {
     position.x = x;

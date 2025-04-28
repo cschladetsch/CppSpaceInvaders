@@ -1,4 +1,4 @@
-#include "Bullet.h"
+#include "../../Entity/Bullet.h"
 
 Bullet::Bullet(Graphics* graphics) : graphics(graphics) {
 }

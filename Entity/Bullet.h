@@ -1,6 +1,6 @@
 #pragma once
 #include <SDL3/SDL.h>
-#include "../src/Graphics.h"
+#include "../include/Graphics.h"
 
 class Bullet {
 public:

@@ -1,5 +1,5 @@
-#include "Enemy.h"
-#include "Bullet.h"
+#include "../../Entity/Enemy.h"
+#include "../../Entity/Bullet.h"
 #include <algorithm>
 #include <random>
 #include <memory>

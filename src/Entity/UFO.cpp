@@ -1,4 +1,4 @@
-#include "UFO.h"
+#include "../../Entity/UFO.h"
 #include <random>
 
 UFO::UFO(Graphics* graphics) : graphics(graphics) {

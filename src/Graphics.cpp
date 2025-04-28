@@ -1,4 +1,4 @@
-#include "../src/Graphics.h"
+#include "../include/Graphics.h"
 #include <iostream>
 
 Graphics::Graphics(SDL_Renderer* renderer)
