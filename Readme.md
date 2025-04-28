@@ -2,7 +2,9 @@
 
 A modern C++23 implementation of the classic Space Invaders arcade game using SDL3.
 
-![Space Invaders](screenshot.png)
+## Demo
+
+[Demo](resources/Demo.gif)
 
 ## Features
 
