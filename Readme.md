@@ -25,7 +25,7 @@ A modern C++ implementation of the classic arcade game Space Invaders using SDL3
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/CppSpaceInvaders.git
+git clone https://github.com/cschladetsch/CppSpaceInvaders.git
 cd CppSpaceInvaders
 ```
 
