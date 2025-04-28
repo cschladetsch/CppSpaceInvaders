@@ -1,11 +1,11 @@
 #include "Game.h"
 #include "Graphics.h"
 #include "TextRenderer.h"
-#include "../Entity/Player.h"
-#include "../Entity/Enemy.h"
-#include "../Entity/Bullet.h"
-#include "../Entity/Barrier.h"
-#include "../Entity/UFO.h"
+#include "Player.h"
+#include "Enemy.h"
+#include "Bullet.h"
+#include "Barrier.h"
+#include "UFO.h"
 #include <algorithm>
 #include <iostream>
 #include <sstream>
