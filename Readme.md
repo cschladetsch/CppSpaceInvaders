@@ -9,16 +9,16 @@ A modern C++ implementation of the classic arcade game Space Invaders using SDL3
 - Classic Space Invaders gameplay with modern features
 - Built with SDL3 for cross-platform compatibility
 - Clean, modular C++23 code
-- Optimized rendering and collision detection
+- Optimised rendering and collision detection
 - Support for keyboard controls
-- Sound effects and optional font rendering with SDL3_ttf
+- Sound effects and optional font rendering with Sdl3\_ttf
 
 ## Requirements
 
 - C++23 compatible compiler
 - CMake 3.20 or higher
 - SDL3 library
-- SDL3\_ttf library (optional, for enhanced text rendering)
+- Sdl3\_ttf library (optional, for enhanced text rendering)
 
 ## Building from Source
 
@@ -32,15 +32,7 @@ cd CppSpaceInvaders
 ### Building with CMake
 
 ```bash
-# Create a build directory
-mkdir build
-cd build
-
-# Configure CMake
-cmake ..
-
-# Build the project
-cmake --build .
+$ mkdir -p build && cd build && cmake .. && build
 ```
 
 ### Running the Game
@@ -67,7 +59,7 @@ CppSpaceInvaders/
    src/                # Source files
    CMakeLists.txt      # CMake build configuration
    .gitignore          # Git ignore file
-   README.md           # This file
+   Readme.md           # This file
 ```
 
 ## Game Components
@@ -103,5 +95,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 
-- Original Space Invaders game created by Tomohiro Nishikado
+- The original Space Invaders game was created by Tomohiro Nishikado
 - SDL3 development team for their excellent multimedia library
